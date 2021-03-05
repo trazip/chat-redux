@@ -10,9 +10,17 @@ import reduxPromise from 'redux-promise';
 import App from './components/app';
 import '../assets/stylesheets/application.scss';
 
+import messagesReducer from './reducers/messagesReducer';
+import channelsReducer from './reducers/channelsReducer';
+import currentUserReducer from './reducers/currentUserReducer';
+import selectedChannelReducer from './reducers/selectedChannelReducer';
+
 // State and reducers
 const reducers = combineReducers({
-  changeMe: (state = null, action) => state
+  messages: messagesReducer,
+  channels: channelsReducer,
+  currentUser: currentUserReducer,
+  selectedChannel: selectedChannelReducer
 });
 
 const middlewares = applyMiddleware(logger, reduxPromise);

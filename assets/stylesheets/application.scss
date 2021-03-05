@@ -1,7 +1,54 @@
 body {
-  font-family: Helvetica;
+  font-family: system-ui;
 }
 .app {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  height: 100vh;
+  display: flex;
 }
+
+#sidebar{
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  background-color: #4A164B;
+  border-right: 1px solid rgba(189, 189, 189, 0.788);
+}
+
+#channelList {
+  height: 100vh;
+  background-color: #4A164B;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+}
+
+#title h1 {
+  font-size: 20px !important;
+}
+
+#title {
+  padding: 15px 0px 10px 20px;
+  border-bottom: 1px solid rgba(189, 189, 189, 0.788);
+}
+
+#channels {
+  padding: 0px 0px 10px 0px;
+}
+
+ul {
+  padding: 0;
+}
+ul li {
+  list-style-type: none;
+  &:hover {
+    background-color: #2f0d30;
+    cursor: pointer;
+  }
+}
+
+.active {
+  background-color: #1164A3;
+}
+
+
