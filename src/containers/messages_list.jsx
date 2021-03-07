@@ -15,9 +15,22 @@ class ChannelList extends Component {
     })
   }
 
-  componentWillMount(){
-    this.props.setMessages(this.props.selectedChannel)
+  componentWillMount() {
+    this.fetchMessages();
   }
+
+  componentDidMount() {
+    this.refresher = setInterval(this.fetchMessages, 5000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.refresher);
+  }
+
+  fetchMessages = () => {
+    this.props.setMessages(this.props.selectedChannel);
+  }
+
   
   render(){
     return(

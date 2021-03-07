@@ -67,7 +67,7 @@ body {
 }
 
 #messages {
-  overflow-y: scroll;
+  overflow: scroll;
   height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
