@@ -14,7 +14,7 @@ body {
   border-right: 1px solid rgba(189, 189, 189, 0.788);
 }
 
-#channelList {
+#channel-list {
   height: 100vh;
   background-color: #4A164B;
   color: white;
@@ -24,16 +24,48 @@ body {
 }
 
 #title h1 {
-  font-size: 20px !important;
+  font-size: 20px;
+  margin-bottom: 0px;
 }
 
-#title {
+#title, #channel-title h2 {
   padding: 15px 0px 10px 20px;
   border-bottom: 1px solid rgba(189, 189, 189, 0.788);
 }
 
+#channel-title h2 {
+  font-size: 16px;
+  margin-bottom: 0px;
+  padding-bottom: 15px;
+  font-weight: bold;
+}
+
 #channels {
   padding: 0px 0px 10px 0px;
+}
+
+
+
+#messages-list {
+  padding: 0px;
+}
+
+.message {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  img {
+    margin-right: 10px;
+  }
+  &:hover {
+    background: rgba(194, 194, 194, 0.185);
+  }
+}
+
+#header h5 {
+  font-size: 14px;
+  margin: 0px;
+  font-weight: bolder;
 }
 
 ul {

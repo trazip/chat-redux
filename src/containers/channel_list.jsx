@@ -14,7 +14,7 @@ class ChannelList extends Component {
   
   render(){
     return(
-      <div id="channelList" className="col-md-2">
+      <div id="channel-list" className="col-md-2">
         <div id="title">
           <h1>Redux Chat</h1>
         </div>
