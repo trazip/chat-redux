@@ -1,30 +1,46 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-//import { bindActionCreators } from 'redux';
+import { bindActionCreators } from 'redux';
 
 import Message from '../components/message';
+import MessageForm from './message_form'
+import { setMessages } from '../actions';
 
 class ChannelList extends Component {
   renderMessages(){
-    return this.props.messages.map((message) => {
+    return this.props.messages.map((message, index) => {
       return (
-        <Message key={message.created_at} message={message} />
+        <Message key={index} message={message}/>
       );
     })
+  }
+
+  componentWillMount(){
+    this.props.setMessages(this.props.selectedChannel)
   }
   
   render(){
     return(
-      <div id="messages-list" className="col-md-9">
+      <div id="messages-list" className="col-md-9 d-flex flex-column">
         <div id="channel-title">
           <h2>#{this.props.selectedChannel}</h2>
         </div>
         <div id="messages">
           {this.renderMessages()}
         </div>
+        <div>
+          <MessageForm />
+        </div>
       </div>
     );
   }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    { setMessages: setMessages }, 
+    dispatch
+   );
 }
 
 function mapStateToProps(state) {
@@ -34,4 +50,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(ChannelList)
+export default connect(mapStateToProps, mapDispatchToProps)(ChannelList)

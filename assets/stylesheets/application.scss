@@ -28,6 +28,11 @@ body {
   margin-bottom: 0px;
 }
 
+#channel-title {
+  z-index: 10; 
+  background-color: white;
+}
+
 #title, #channel-title h2 {
   padding: 15px 0px 10px 20px;
   border-bottom: 1px solid rgba(189, 189, 189, 0.788);
@@ -44,15 +49,14 @@ body {
   padding: 0px 0px 10px 0px;
 }
 
-
-
 #messages-list {
   padding: 0px;
 }
 
 .message {
+  z-index: 1;
   display: flex;
-  padding: 10px;
+  padding: 20px;
   align-items: center;
   img {
     margin-right: 10px;
@@ -62,10 +66,38 @@ body {
   }
 }
 
+#messages {
+  overflow-y: scroll;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
 #header h5 {
   font-size: 14px;
   margin: 0px;
   font-weight: bolder;
+  span.time {
+    font-weight: lighter;
+  }
+}
+
+#message-form {
+  margin: 0px 20px 0px 20px;
+  display: flex;
+
+  input {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}
+
+.send-btn {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  background-color: #4A164B;
+  color: white;
 }
 
 ul {
